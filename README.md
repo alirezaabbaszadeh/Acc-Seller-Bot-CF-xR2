@@ -14,9 +14,10 @@
 2. **ویرایش تنظیمات**
    در فایل `wrangler.toml` مقادیر `account_id`، `database_id` و نام سطل‌ها را با اطلاعات حساب Cloudflare خود جایگزین کنید.
 3. **ایجاد منابع Cloudflare**
+   برای ذخیره رسیدهای پرداخت می‌توانید یک جدول جدید در پایگاه داده D1 ایجاد کنید.
    ```bash
-   wrangler r2 bucket create payment-proofs
    wrangler d1 create account-bot
+   wrangler d1 execute account-bot --command "CREATE TABLE IF NOT EXISTS payment_proofs (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id TEXT, file_url TEXT, created_at INTEGER);"
    wrangler d1 migrations apply account-bot
    ```
 4. **قرار دادن متغیرهای محرمانه**
