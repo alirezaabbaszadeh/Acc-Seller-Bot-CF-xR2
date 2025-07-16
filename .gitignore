@@ -1,0 +1,14 @@
+# Node dependencies
+node_modules/
+
+# Cloudflare Wrangler CLI artifacts
+.wrangler/
+.dev.vars
+
+# Build outputs
+dist/
+build/
+
+# Environment files
+.env
+.env.local
